@@ -1,10 +1,4 @@
-import {
-  Card,
-  FormControl,
-  MenuItem,
-  Select,
-  InputLabel,
-} from "@material-ui/core";
+import { Card } from "@material-ui/core";
 import React from "react";
 import { Link } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
@@ -19,8 +13,8 @@ function ComposerCard({ composer }) {
   }
 
   return (
-    <div>
-      <Card>
+    <div className="composerCard">
+      <Card key={id}>
         <Link onClick={handleClick}>
           <h1>{name}</h1>
         </Link>

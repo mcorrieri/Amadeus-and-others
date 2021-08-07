@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Card,
-  FormControl,
-  MenuItem,
-  Select,
-  InputLabel,
-} from "@material-ui/core";
+import { FormControl, MenuItem, Select, InputLabel } from "@material-ui/core";
 
 function Header() {
   return (
@@ -17,8 +11,7 @@ function Header() {
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={null}
-            onChange={null}
+            autoWidth
           >
             <MenuItem value={10}>Popular</MenuItem>
             <MenuItem value={20}>Recommended</MenuItem>
@@ -34,8 +27,7 @@ function Header() {
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={null}
-            onChange={null}
+            autoWidth
           >
             <MenuItem value={10}>Medieval</MenuItem>
             <MenuItem value={20}>Renaissance</MenuItem>
