@@ -19,13 +19,13 @@ function App() {
     axios.get(url).then((res) => {
       // console.log(res);
       const data = res.data.composers;
-      console.log(data);
+      // console.log(data);
       setComposers(data);
     });
   }, []);
 
   const composerCards = composers.map((composerObj) => {
-    console.log(composerObj);
+    // console.log(composerObj);
     return <ComposerCard key={composerObj.id} composer={composerObj} />;
   });
 
