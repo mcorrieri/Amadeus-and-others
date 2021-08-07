@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-function WorksbyComposer() {
+function WorksbyComposer({ id }) {
   const [works, setWorks] = useState([]);
 
   const url = `https://api.openopus.org/work/list/composer/129/genre/all.json`;
@@ -15,7 +15,12 @@ function WorksbyComposer() {
   }, []);
 
   const worksCard = works.map((workslist) => {
-    return <p key={workslist.id}>{workslist.title}</p>;
+    return (
+      <div>
+        <h3 key={workslist.id}>{workslist.title}</h3>
+        <p>{workslist.genre}</p>
+      </div>
+    );
   });
 
   return (

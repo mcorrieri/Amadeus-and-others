@@ -7,6 +7,7 @@ import { Card } from "@material-ui/core/";
 import Genres from "./Genres";
 import NotFound from "./NotFound";
 import WorksbyComposer from "./WorksbyComposer";
+import Header from "./Header";
 
 // https://api.openopus.org/composer/list/pop.json
 
@@ -32,9 +33,9 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Header />
         <Switch>
           <Route exact path="/">
-            <h1>Welcome to The Classical Period</h1>
             <Card>{composerCards}</Card>
           </Route>
           <Route exact path="/genres">
