@@ -6,6 +6,7 @@ import ComposerCard from "./ComposerCard";
 import { Card } from "@material-ui/core/";
 import Genres from "./Genres";
 import NotFound from "./NotFound";
+import WorksbyComposer from "./WorksbyComposer";
 
 // https://api.openopus.org/composer/list/pop.json
 
@@ -38,6 +39,9 @@ function App() {
           </Route>
           <Route exact path="/genres">
             <Genres />
+          </Route>
+          <Route exact path="/composerworks">
+            <WorksbyComposer />
           </Route>
           <Route path="*">
             <NotFound />
