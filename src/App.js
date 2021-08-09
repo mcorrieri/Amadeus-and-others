@@ -8,6 +8,7 @@ import Genres from "./Genres";
 import NotFound from "./NotFound";
 import WorksbyComposer from "./WorksbyComposer";
 import Header from "./Header";
+import Periods from "./Periods";
 
 // https://api.openopus.org/composer/list/pop.json
 
@@ -26,7 +27,7 @@ function App() {
   }, []);
 
   const composerCards = composers.map((composerObj) => {
-    console.log(composerObj);
+    // console.log(composerObj);
     return <ComposerCard key={composerObj.id} composer={composerObj} />;
   });
 
@@ -41,8 +42,11 @@ function App() {
           <Route exact path="/genres">
             <Genres />
           </Route>
+          <Route exact path="/periods">
+            <Periods />
+          </Route>
           <Route exact path="/composerworks">
-            <WorksbyComposer composerCards={composerCards} />
+            <WorksbyComposer />
           </Route>
           <Route path="*">
             <NotFound />

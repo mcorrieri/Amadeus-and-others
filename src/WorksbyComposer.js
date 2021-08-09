@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-function WorksbyComposer({ id }) {
+function WorksbyComposer() {
   const [works, setWorks] = useState([]);
 
   const url = `https://api.openopus.org/work/list/composer/129/genre/all.json`;
