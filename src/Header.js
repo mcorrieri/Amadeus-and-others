@@ -5,6 +5,24 @@ import { useHistory } from "react-router";
 function Header() {
   const [menu, setMenu] = useState(false);
   const [opendrawer, setOpenDrawer] = useState(false);
+  const [state, setState] = useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
   let history = useHistory();
 
   function handleHomeClick() {
@@ -20,18 +38,24 @@ function Header() {
   }
 
   function openDrawer() {
-    setMenu(!menu);
+    setMenu(menu);
   }
 
-  function toggleDrawer() {
-    setOpenDrawer(!opendrawer);
-  }
+  // function toggleDrawer() {
+  //   setOpenDrawer(!opendrawer);
+  // }
 
   return (
     <div className="Header">
       <h1>Welcome to The Classical Period</h1>
       <Button onClick={toggleDrawer}>Menu</Button>
-      <Drawer open={openDrawer}>
+      <Drawer
+        className="menu"
+        // variant="persistent"
+        anchor="left"
+        // open={state}
+        // onClose={!setState}
+      >
         <MenuItem onClick={handleHomeClick}>Home</MenuItem>
         <MenuItem onClick={handleGenreClick}>Genres</MenuItem>
         <MenuItem onClick={handlePeriodClick}>Periods</MenuItem>
