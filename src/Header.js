@@ -1,65 +1,43 @@
 import React, { useState } from "react";
-import { Button, Drawer, MenuItem } from "@material-ui/core";
 import { useHistory } from "react-router";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 
 function Header() {
-  const [menu, setMenu] = useState(false);
-  const [opendrawer, setOpenDrawer] = useState(false);
-  const [state, setState] = useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
-
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-
-    setState({ ...state, [anchor]: open });
-  };
-
-  let history = useHistory();
-
-  function handleHomeClick() {
-    history.push("/");
-  }
-
-  function handleGenreClick() {
-    history.push("/genres");
-  }
-
-  function handlePeriodClick() {
-    history.push("/periods");
-  }
-
-  function openDrawer() {
-    setMenu(menu);
-  }
-
-  // function toggleDrawer() {
-  //   setOpenDrawer(!opendrawer);
-  // }
-
   return (
     <div className="Header">
       <h1>Welcome to The Classical Period</h1>
-      <Button onClick={toggleDrawer}>Menu</Button>
-      <Drawer
-        className="menu"
-        // variant="persistent"
-        anchor="left"
-        // open={state}
-        // onClose={!setState}
-      >
-        <MenuItem onClick={handleHomeClick}>Home</MenuItem>
-        <MenuItem onClick={handleGenreClick}>Genres</MenuItem>
-        <MenuItem onClick={handlePeriodClick}>Periods</MenuItem>
-      </Drawer>
+      <div className="dropdowns">
+        <FormControl className="genre-form">
+          <InputLabel className="genre-select">Genre</InputLabel>
+          <Select className="genre-select-label" id="demo-simple-select">
+            <MenuItem>Popular</MenuItem>
+            <MenuItem>Recommended</MenuItem>
+            <MenuItem>Chamber</MenuItem>
+            <MenuItem>Keyboard</MenuItem>
+            <MenuItem>Orchestral</MenuItem>
+            <MenuItem>Vocal</MenuItem>
+          </Select>
+        </FormControl>
+
+        <FormControl className="period-form">
+          <InputLabel className="period-select">Period</InputLabel>
+          <Select className="period-select-label" id="demo-simple-select">
+            <MenuItem>Medieval</MenuItem>
+            <MenuItem>Renaissance</MenuItem>
+            <MenuItem>Baroque</MenuItem>
+            <MenuItem>Classical</MenuItem>
+            <MenuItem>Early Romantic</MenuItem>
+            <MenuItem>Romantic</MenuItem>
+            <MenuItem>Late Romantic</MenuItem>
+            <MenuItem>20th Century</MenuItem>
+            <MenuItem>Post-War</MenuItem>
+            <MenuItem>21st Century</MenuItem>
+          </Select>
+        </FormControl>
+      </div>
     </div>
   );
 }
