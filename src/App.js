@@ -9,6 +9,8 @@ import NotFound from "./NotFound";
 import WorksbyComposer from "./WorksbyComposer";
 import Header from "./Header";
 import Periods from "./Periods";
+import SignUp from "./SignUp";
+import Login from "./Login";
 
 // https://api.openopus.org/composer/list/pop.json
 
@@ -35,9 +37,15 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/home">
             <Header />
             <Card>{composerCards}</Card>
+          </Route>
+          <Route exact path="/signup">
+            <SignUp />
+          </Route>
+          <Route exact path="/login">
+            <Login />
           </Route>
           <Route exact path="/genres">
             <Genres />
