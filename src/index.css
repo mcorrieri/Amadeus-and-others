@@ -60,3 +60,20 @@ code {
   justify-content: center;
   align-items: center;
 }
+
+.composer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.home-image {
+  height: 300px;
+  width: 300px;
+}
+
+.Header {
+  border-bottom: solid 1px black;
+}
