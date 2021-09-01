@@ -16,6 +16,7 @@ import Login from "./Login";
 
 function App() {
   const [composers, setComposers] = useState([]);
+  const [user, setUser] = useState(null);
 
   const url = `https://api.openopus.org/composer/list/pop.json`;
 
@@ -28,6 +29,15 @@ function App() {
     });
   }, []);
 
+  // useEffect(() => {
+  //   axios.get("http://localhost:3000/users").then((res) => {
+  //     console.log(res);
+  //     const data = res.users;
+  //     console.log(data);
+  //     setUser(data);
+  //   });
+  // }, []);
+
   const composerCards = composers.map((composerObj) => {
     // console.log(composerObj);
     return <ComposerCard key={composerObj.id} composer={composerObj} />;
@@ -36,9 +46,9 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Header />
         <Switch>
           <Route exact path="/home">
-            <Header />
             <Card>{composerCards}</Card>
           </Route>
           <Route exact path="/signup">

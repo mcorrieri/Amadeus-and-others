@@ -8,7 +8,7 @@ import Select from "@material-ui/core/Select";
 function Header() {
   return (
     <div className="Header">
-      <h1>Welcome to The Classical Period</h1>
+      <h1>Welcome to The Classixxx</h1>
       <div className="dropdowns">
         <FormControl className="genre-form">
           <InputLabel className="genre-select">Genre</InputLabel>
