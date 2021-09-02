@@ -29,26 +29,28 @@ function App() {
     });
   }, []);
 
-  fetch("http://localhost:3000/auto_login", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `bearer ${JWT_TOKEN}`,
-    },
-    body: JSON.stringify(requestBody),
-  })
+  // fetch("http://localhost:3000/auto_login", {
+  //   method: "GET",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     Authorization: `bearer ${JWT_TOKEN}`,
+  //   },
+  //   body: JSON.stringify(requestBody),
+  // })
 
-  // useEffect(() => {
-  //   axios.get("http://localhost:3000/users").then((res) => {
-  //     console.log(res);
-  //     const data = res.users;
-  //     console.log(data);
-  //     setUser(data);
-  //   });
-  // }, []);
+  useEffect(() => {
+    axios.get("http://localhost:3000/users").then((res) => {
+      console.log(res);
+      const data = res.users;
+      console.log(data);
+      setUser(data);
+    });
+  }, []);
 
+  const composerCards = composers.map((composerObj) => {
     // console.log(composerObj);
     return <ComposerCard key={composerObj.id} composer={composerObj} />;
+  });
 
   return (
     <div className="App">
