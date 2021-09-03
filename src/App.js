@@ -38,15 +38,6 @@ function App() {
   //   body: JSON.stringify(requestBody),
   // })
 
-  useEffect(() => {
-    axios.get("http://localhost:3000/users").then((res) => {
-      console.log(res);
-      const data = res.users;
-      console.log(data);
-      setUser(data);
-    });
-  }, []);
-
   const composerCards = composers.map((composerObj) => {
     // console.log(composerObj);
     return <ComposerCard key={composerObj.id} composer={composerObj} />;
