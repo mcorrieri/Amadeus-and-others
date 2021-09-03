@@ -38,6 +38,20 @@ function App() {
   //   body: JSON.stringify(requestBody),
   // })
 
+<<<<<<< HEAD
+=======
+  useEffect(() => {
+    axios.get("http://localhost:3000/users").then((res) => {
+      console.log(res);
+      const data = res.users;
+      console.log(data);
+      setUser(data);
+    });
+  }, []);
+  // just saying theres no way i wrote this because i don't even know 
+  // how to use axios and don't even know what it is.
+
+>>>>>>> 4320debf9921ccc5373e64d5712cfeca3da6164c
   const composerCards = composers.map((composerObj) => {
     // console.log(composerObj);
     return <ComposerCard key={composerObj.id} composer={composerObj} />;
