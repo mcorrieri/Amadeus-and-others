@@ -46,6 +46,8 @@ function App() {
       setUser(data);
     });
   }, []);
+  // just saying theres no way i wrote this because i don't even know 
+  // how to use axios and don't even know what it is.
 
   const composerCards = composers.map((composerObj) => {
     // console.log(composerObj);
